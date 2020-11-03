@@ -1,0 +1,48 @@
+
+<h1 class="text-center m-3 " >Youtube <br/>  Downloader</h1>
+<form >
+<div class="container m-3">
+    <div class="card-title text-center">
+        <small class="text-left">Config</small>
+        <div class="folder-input-container">
+            <button class="button cell" type="button">Carpeta de
+            salida</button>
+            <input type='text' class="input cell">
+            <input type="file"  class="hidden" 
+                webkitdirectory mozdirectory 
+                msdirectory odirectory directory 
+            >
+        </div>
+    </div>
+
+    <div>
+        <small class="text-left">URL Descarga</small>
+        <input class= "input url" type="text" placeholder="URL">
+        <button class="button submit" type="button"
+            (click)="submit()"
+            [ngClass]="{'surface-error': downloading}"
+        >{{downloading ? "Cancelar" : "Descargar"}}</button>
+    </div>
+
+    <div class="card m-1">
+        <div class="card-title text-left">
+            <h4>Información de descarga:</h4>
+        </div>
+        
+        <div class="card-body text-left">
+            <p><strong>Titulo:</strong> algo</p>
+            <p><strong>Descripción:</strong> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi eius nihil velit, ratione laudantium quisquam quo similique fuga blanditiis obcaecati itaque, alias nostrum aliquid, error hic temporibus deleniti porro sapiente!</p>
+            <p><strong>Tamaño:</strong> algo</p>
+        </div>
+    </div>
+
+    <div class="m-1 progress">
+        <div class="progress-container" 
+            *ngIf="downloading"
+        >
+            <div class="progress-bar">0%</div>
+        </div>
+    </div>
+</div>
+
+</form>

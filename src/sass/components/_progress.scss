@@ -1,0 +1,17 @@
+.progress{
+    &-container{
+        width:100%;
+        height:1.5rem;
+    }
+    &-bar{
+        margin:auto;
+        min-width: 2rem;
+        max-width: 100%;
+        background-color: $primary-dark;
+        height:100%;
+        text-align: center;
+        color:$on-secondary;
+        width:0;
+        @include round-medium;
+    }
+}

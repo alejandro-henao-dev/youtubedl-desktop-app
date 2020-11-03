@@ -1,0 +1,117 @@
+/*
+------------
+COLORS
+------------
+*/
+
+/*
+Primary color
+-------------
+displayed most frequently across your app's screens and components.
+*/
+$primary:#434dcf; 
+$primary_light:#7c85df;
+$primary_dark:#343ab8;
+
+/*
+Secondary color
+-------------
+provides more ways to accent and distinguish your product. 
+Having a secondary color is optional,
+and should be applied sparingly to accent 
+select parts of
+your UI.
+
+secondary colors are best for:
+
+- Floating action buttons
+- Selection controls, like sliders and switches
+- Highlighting selected text
+- Progress bars
+- Links and headlines
+*/
+
+$secondary:#cfc643;
+$secondary_light:#e3dd61;
+$secondary_dark:#a99a36;
+
+
+// Surface, background, and error colors typically don’t represent brand:
+
+
+/*
+Background color
+-------------
+appears behind scrollable content. The baseline background and surface color is #FFFFFF.
+*/
+$background:white;
+$background_light:white;
+$background_dark:white;
+
+/*
+Surface color
+-------------
+affect surfaces of components, such as cards, sheets, and menus.
+*/
+$surface:white;
+$surface_light:white;
+$surface_dark:white;
+
+/*
+Error color
+-------------
+indicates errors in components, such as invalid text in a text field. The baseline error color is #B00020.
+*/
+
+$error:red;
+$error_light:red;
+$error_dark:red;
+
+/*
+"On" colors
+-----------
+appear “on” top of surfaces
+
+App surfaces use colors from specific categories in your color palette, such as a primary color. 
+Whenever elements, such as text or icons, appear in front of those surfaces, 
+those elements should use colors designed to be clear and legible against the
+colors behind them.
+
+On” colors are primarily applied to text, iconography, and strokes. Sometimes, they are applied to surfaces.
+*/
+
+$on-primary:white;
+$on-primary_light:white;
+$on-primary_dark:white;
+
+$on-secondary:white;
+$on-secondary_light:black;
+$on-secondary_dark:black;
+
+$on-background:#484848;
+$on-background_light:#484848;
+$on-background_dark:#484848;
+
+$on-surface:#484848;
+$on-surface_light:#484848;
+$on-surface_dark:#484848;
+
+$on-error:white;
+$on-error_light:white;
+$on-error_dark:white;
+
+/*
+Other colors
+*/
+$shadow-color:rgb(121, 121, 121);
+$overlay-color:rgba(8, 8, 8, 0.623);
+
+/*
+------------
+SHAPE
+------------
+*/
+$round-small:5px;
+$round-medium:8px;
+$round-big:16px;
+

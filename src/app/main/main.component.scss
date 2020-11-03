@@ -1,0 +1,69 @@
+@import 'abstracts/mixins';
+
+form{
+    text-align: center;
+}
+
+input, .submit{
+    display:block;
+    margin: 1rem auto;
+}
+
+.url{
+    width:100%;
+    margin-top:0.1rem;
+    margin-bottom: 2rem;
+}
+
+.submit{
+    min-width: 30%;
+}
+small{
+    display:block;
+    color:$primary-dark;
+    margin-left:0.5rem;
+}
+button{
+    cursor: pointer;
+}
+.progress{
+    position: fixed;
+    bottom: 0;
+    left:0;
+    width:100%;
+}
+h1{
+    letter-spacing: 0.3rem;
+    color:$primary;
+}
+.container,.card{
+    padding:0 2rem;
+    max-width:800px;
+    margin:auto;
+}
+
+.card{
+    padding-bottom: 2rem;
+}
+.card-title{
+    padding-top:1rem;
+}
+
+.folder-input-container{
+    padding-top:3px;
+    display:flex;
+    justify-content: center;
+
+    .button{
+        background-color: $primary-light;
+        color:$on-primary;
+        font-weight: bold;
+        margin:0;
+        border-radius: $round-small  0 0 $round-small;
+    }
+    input{
+        border-radius: 0 $round-small  $round-small 0;
+        margin:0;
+        flex-grow: 2;
+    }
+}
