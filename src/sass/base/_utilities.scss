@@ -13,3 +13,7 @@
 .hidden{
     display: none!important;
 }
+
+.abs-center{
+    @include absCenter;
+}

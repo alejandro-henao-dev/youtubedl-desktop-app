@@ -1,5 +1,5 @@
 {
-    "productName": "angular-electron",
+    "productName": "youtube_downloader",
     "copyright" : "Copyright © 220 ${author}",
     "directories": {
       "output": "release/"
@@ -21,7 +21,7 @@
           "!tslint.json"
       ],
     "win": {
-      "icon": "dist/assets/icons",
+      "icon": "electron/favicon.ico",
       "target": [
         "portable"
       ]

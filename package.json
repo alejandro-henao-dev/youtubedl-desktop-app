@@ -10,10 +10,11 @@
     "serve:client": "ng serve",
     "dev:angular": "ng build  --base-href ./ --watch",
     "dev:electron": "electron .",
-    "dev": "concurrently \"npm run dev:anglar \"npm run dev:electron\"",
+    "dev": "concurrently \"npm run dev:angular\" \"npm run dev:electron\"",
     "start": "ng build --base-href ./ && npm run dev:electron",
     "prod:angular": "ng build  --base-href ./ --prod",
-    "build": "npm run prod:angular && electron-builder build"
+    "build": "npm run prod:angular && electron-builder build",
+    "build:electron": "electron-builder build"
   },
   "private": true,
   "dependencies": {

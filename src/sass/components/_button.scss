@@ -21,4 +21,9 @@
 
         @include elevation-0;
     }
+    &:disabled{
+        cursor: default;
+        opacity: 0.3;
+    }
+    
 }

@@ -63,9 +63,9 @@ Error color
 indicates errors in components, such as invalid text in a text field. The baseline error color is #B00020.
 */
 
-$error:red;
-$error_light:red;
-$error_dark:red;
+$error:#e83e3e;
+$error_light:#e83e3e;
+$error_dark:#e83e3e;
 
 /*
 "On" colors
