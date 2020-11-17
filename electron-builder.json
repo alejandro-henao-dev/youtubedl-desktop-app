@@ -1,6 +1,6 @@
 {
     "productName": "youtube_downloader",
-    "copyright" : "Copyright © 220 ${author}",
+    "copyright" : "Copyright © 2020 ${author}",
     "directories": {
       "output": "release/"
     },
