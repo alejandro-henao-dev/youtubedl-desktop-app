@@ -48,13 +48,13 @@ class Ytdl{
        return this.downloader
     }
     setFullPath(name){
-        this.fullFilePath=path.resolve(this.output,name+this.currentExtension)
+        this.fullFilePath=path.resolve(this.output,this.cleanName(name)+this.currentExtension)
     }
     getFullPath(name){
         if(name){
-            return path.resolve(this.output,name+this.currentExtension)
+            return path.resolve(this.output,this.cleanName(name)+this.currentExtension)
         }else{
-            return path.resolve(this.output,(this.metadata.title || this.defaultVideoName) +this.currentExtension)
+            return path.resolve(this.output,(this.cleanName(this.metadata.title) || this.defaultVideoName) +this.currentExtension)
         }
     }
 
@@ -66,7 +66,7 @@ class Ytdl{
 
             var data=await ytdl.getInfo(this.url,this.opts)
             var {title,description} = data.videoDetails;
-            this.metadata.title=title
+            this.metadata.title=this.cleanName(title)
             this.metadata.description=description.simpleText
             
             var formats=data.formats.filter(i=>i.hasVideo && i.hasAudio)
@@ -90,6 +90,25 @@ class Ytdl{
             console.log(error);
         }
       
+    }
+
+    cleanName(str){
+        var otherValids=[193,201,205,211,218,225,233,237,243,250]
+        str=str.split().map(char=>{
+            return char.charCodeAt(0)  <= 127  || otherValids.indexOf(char.charCodeAt(0)) ? char : ""
+        }).join().replace(/[~"#%&\*:<>¿?\/\\{|}.,+*!^@\[\]'¡=¬\(\)]/g,"-");
+        return str
+    }
+
+    async exists(){
+        this.currentExtension=this.finalExtension
+        return await fs.promises.access(this.getFullPath(), fs.constants.F_OK)
+        .then((e) => {
+            return true
+        })
+        .catch((e) => {
+            return false
+        })
     }
 }
 module.exports=Ytdl

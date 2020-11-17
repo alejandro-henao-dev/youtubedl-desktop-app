@@ -1,0 +1,37 @@
+.content{
+    padding:2rem 1rem;
+    background:white;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 400px;
+}
+
+img{
+    fill:#434dcf;
+    filter: invert(29%) sepia(34%) saturate(6190%) hue-rotate(230deg) brightness(84%) contrast(91%);
+    max-width: 70px;
+    max-height: 70px;
+    margin:2rem auto;
+}
+.title{
+    color:#434dcf;
+}
+
+button{
+    margin:2rem;
+    margin-bottom:0rem;
+    padding: 0.5rem 1rem;
+    border:none;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.success{
+    color:white;
+    background:#434dcf;
+}
+
+.cancel{
+    color:white;
+    background:#db303e;
+}

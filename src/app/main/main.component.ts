@@ -18,6 +18,8 @@ export class MainComponent implements OnInit, AfterViewInit {
   
   progress=0
   dlComplete=false
+
+  popup=false
   constructor(
     private fb:FormBuilder,
     private electron:ElectronService,
@@ -67,7 +69,7 @@ export class MainComponent implements OnInit, AfterViewInit {
       this.downloading=false
       return
     }
-    
+
     if(this.form.invalid){
       return
     }
@@ -76,6 +78,28 @@ export class MainComponent implements OnInit, AfterViewInit {
     if(!this.metadata){
       return 
     }
+
+    if(await this.electron.fileExists()){
+      this.popup=true
+      return;
+    }else{
+      this.download()
+    }
+  }
+
+  onPopupResponse(res){
+    this.popup=false
+    if(res){
+      this.download();
+    }
+  }
+
+  dlCompleteOnClose(){
+    this.dlComplete=false;
+  }
+
+  async download(){
+  
     this.downloading=true
     this.electron.download().subscribe(
       (data:number)=>{ // on data
@@ -94,7 +118,6 @@ export class MainComponent implements OnInit, AfterViewInit {
         })
       }
     )
-   
   }
 
 }

@@ -36,7 +36,9 @@ export class ElectronService {
   }
 
   download(){
+    
     this.ipc.send("url:request:download",null)
+
     var obs$=new Observable(observer=>{
       this.ipc.on("url:response:progress",(e,data)=>{
         
@@ -48,6 +50,17 @@ export class ElectronService {
     })
     
     return obs$
+  }
+
+  fileExists(){
+    return new Promise((resolve,reject)=>{
+      this.ipc.on("url:response:exists",(e,res)=>{
+        console.log("reeeeeees",res);
+        
+        resolve(res)
+      })
+      this.ipc.send("url:request:exists")
+    })
   }
 
   SelectOutput(){

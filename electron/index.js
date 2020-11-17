@@ -33,7 +33,23 @@ ipcMain.on('url:request:metadata',async (e,data)=>{
   )
 })
 
+ipcMain.on('url:request:exists',async (e)=>{
+
+  if(await ytdlIntance.exists()){
+
+    mainWindow.webContents.send('url:response:exists',
+      true
+    )
+
+  }else{
+    mainWindow.webContents.send('url:response:exists',
+      false
+    )
+  }
+})
+
 ipcMain.on('url:request:download',async (e)=>{
+
   var dl=ytdlIntance.download()
   dl.on('progress',(chunkLength,downloaded,total)=>{
     var progress=Math.floor((downloaded*100)/total)
@@ -74,5 +90,5 @@ app.on('ready',()=>{
     }
   });
   mainWindow.loadURL(`${uiPath}`)
-  mainWindow.removeMenu()
+  // mainWindow.removeMenu()
 })

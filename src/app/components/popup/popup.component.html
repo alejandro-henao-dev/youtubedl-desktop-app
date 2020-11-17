@@ -1,0 +1,21 @@
+<div class="overlay" *ngIf="open">
+    <div class=" abs-center">
+        <div class="content">
+            <img src="assets/exclamation.svg" alt="img">
+            <h3 class="title">El video que intentas descargar ya existe</h3>
+            <br/>
+            ¿deseas reemplazarlo?
+
+            <div>
+                <button class="success"
+                    (click)="onReplace()"
+                > Continuar </button>
+
+                <button class="cancel"
+                    (click)="onCancel()"
+                > Cancelar </button>
+
+            </div>
+        </div>
+    </div>
+</div>

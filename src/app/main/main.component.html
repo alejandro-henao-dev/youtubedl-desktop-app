@@ -66,3 +66,13 @@
 
 </form>
 <app-loader-spinner *ngIf="busy"></app-loader-spinner>
+<app-popup
+    [open]="popup"
+    (replace)="onPopupResponse($event)"
+></app-popup>
+
+<app-download-complete
+    [open]="dlComplete"
+    (close)="dlCompleteOnClose()"
+>
+</app-download-complete>
